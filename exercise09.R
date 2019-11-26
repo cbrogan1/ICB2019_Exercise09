@@ -10,7 +10,7 @@ library(cowplot)
 dataFile <- read.table("age_weight.txt", header=T, sep="\t")
 
 # create plot
-a = ggplot(data = dataFile, aes(x = age, y = weight)) + 
+a <- ggplot(data = dataFile, aes(x = age, y = weight)) + 
     geom_point(color = "blue", shape = 1) + 
     theme_bw() + 
     xlab("Age (in months)") + 
@@ -38,12 +38,13 @@ c <- ggplot(data, aes(x= region, y = observations)) + geom_jitter(aes(color = as
 # plot both
 plot_grid(b, c)
 
-# Why the plots are different:
+# Do the plots different stories? Why?
+# Yes, the plots tell different stories.
 # The difference in the bar and scatter plots show that the standard deviations of the regions are different.
 # The north region has a small standard deviation.
 # The east and west have large standard deviations.
 # The south region has two subsets of data that each have small deviations with in the data subsets but the data set as a whole has a greater standard deviation than the north.
-
+# The bar graph shows the averages while the jitter plot shows the ranges of the data
 
 
 
